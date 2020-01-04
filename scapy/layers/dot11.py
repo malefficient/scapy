@@ -959,6 +959,20 @@ class Dot11EltRates(Dot11Elt):
         )
     ]
 
+class DSSet(Dot11Elt):
+    name = "DSSet"
+    fields_desc = [
+        ByteField("ID", 3),
+        ByteField("len", None),
+        ByteField("channel", None),
+    ]
+class HTinfo(Dot11Elt):
+    name = "HT info (802.11n)"
+    fields_desc = [
+        ByteField("ID", 61),
+        ByteField("len", None),
+        ByteField("channel", 1),
+    ]
 
 class Dot11EltVendorSpecific(Dot11Elt):
     name = "802.11 Vendor Specific"
