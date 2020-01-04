@@ -973,7 +973,15 @@ class HTinfo(Dot11Elt):
         ByteField("len", None),
         ByteField("channel", 1),
     ]
-
+class VHTinfo(Dot11Elt):
+    name = "VHT info (802.11ac)"
+    fields_desc = [
+        ByteField("ID", 192),
+        ByteField("len", None),
+        ByteField("channel_width", 1),
+        ByteField("channel_center0", 1),
+        ByteField("channel_center1", 1),
+    ]
 class Dot11EltVendorSpecific(Dot11Elt):
     name = "802.11 Vendor Specific"
     fields_desc = [
